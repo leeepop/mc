@@ -5,20 +5,20 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v3
-- uses: actions/setup-java@v3
-  with:
-    distribution: 'zulu' # See 'Supported distributions' for available options
-    java-version: '17'
-- name: Start Ngrok
-  env:
-    NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
-  run: |
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu' # See 'Supported distributions' for available options
+        java-version: '17'
+    - name: Start Ngrok
+      env:
+         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
+      run: |
           wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip
           unzip ngrok-v3-stable-linux-amd64.zip
           chmod +x ngrok
           ./ngrok authtoken "$NGROK_TOKEN"
           ./ngrok tcp 25565
-- name: Sleep
-  run: sleep 6h
+    - name: Sleep
+      run: sleep 6h
