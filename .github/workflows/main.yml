@@ -1,0 +1,20 @@
+name: Test
+on:
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+      - name: Start Ngrok
+       env:
+         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
+       run: |
+          chmod +x ./ssh-server.sh &&  ./ssh-server.sh
+     - name: Sleep
+       run: sleep 6h
