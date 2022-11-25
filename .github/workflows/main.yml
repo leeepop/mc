@@ -28,6 +28,8 @@ jobs:
           
     - name: Start Minecraft
       run: |
-        java -Xms512M -Xmx2G -javaagent:slimeworldmanager-classmodifier.jar -Dfile.encoding=UTF-8 -jar spigot.jar nogui
+        screen -S mc -d -m java -Xms512M -Xmx2G -javaagent:slimeworldmanager-classmodifier.jar -Dfile.encoding=UTF-8 -jar spigot.jar nogui
+    - name: SSH connection to Actions
+      uses: lem0nb/debugger-action@master
     - name: Sleep
       run: sleep 6h
