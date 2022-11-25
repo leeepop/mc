@@ -17,7 +17,11 @@ jobs:
           wget -O Bedwars.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/Bedwars.zip
           unzip ngrok-v3-stable-linux-amd64.zip &
           unzip Bedwars.zip &
-          
+
+    - name: Start Minecraft
+      run: |
+        screen -S mc -d -m java -Xms512M -Xmx2G -javaagent:slimeworldmanager-classmodifier.jar -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -jar spigot.jar nogui
+        
     - name: Start Ngrok
       env:
          NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
@@ -26,9 +30,6 @@ jobs:
           ./ngrok authtoken "$NGROK_TOKEN"
           ./ngrok tcp 25565 &
           
-    - name: Start Minecraft
-      run: |
-        screen -S mc -d -m java -Xms512M -Xmx2G -javaagent:slimeworldmanager-classmodifier.jar -Dfile.encoding=UTF-8 -jar spigot.jar nogui
     - name: SSH connection to Actions
       uses: lem0nb/debugger-action@master
     - name: Sleep
