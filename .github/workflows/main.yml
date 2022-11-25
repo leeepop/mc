@@ -9,16 +9,24 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: 'zulu' # See 'Supported distributions' for available options
+        distribution: 'zulu'
         java-version: '17'
+    - name: Download And Unzip
+      run: |
+          wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip
+          wget -O Bedwars.ziphttps://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/Bedwars.zip
+          unzip *.zip
+          
     - name: Start Ngrok
       env:
          NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
       run: |
-          wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip
-          unzip ngrok-v3-stable-linux-amd64.zip
           chmod +x ngrok
           ./ngrok authtoken "$NGROK_TOKEN"
-          ./ngrok tcp 25565
+          ./ngrok tcp 25565 &
+          
+    - name: Start Minecraft
+      run: |
+        java -Xms512M -Xmx2G -javaagent:slimeworldmanager-classmodifier.jar -Dfile.encoding=UTF-8 -jar spigot.jar nogui
     - name: Sleep
       run: sleep 6h
