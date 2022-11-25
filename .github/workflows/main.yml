@@ -10,7 +10,7 @@ jobs:
     - uses: actions/setup-java@v3
       with:
         distribution: 'microsoft'
-        java-version: '17'
+        java-version: '8'
     - name: Download And Unzip
       run: |
           wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip
