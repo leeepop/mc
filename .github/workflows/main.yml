@@ -13,9 +13,10 @@ jobs:
         java-version: '17'
     - name: Download And Unzip
       run: |
-          wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip
+          wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip
           wget -O Bedwars.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/Bedwars.zip
-          unzip *.zip
+          unzip ngrok-v3-stable-linux-amd64.zip &
+          unzip Bedwars.zip &
           
     - name: Start Ngrok
       env:
