@@ -35,4 +35,4 @@ jobs:
       run: |
           python3 mc.py
     - name: Sleep
-      run: sleep 6h
+      run: python3 sleep.py
