@@ -21,7 +21,7 @@ jobs:
 
     - name: Start Minecraft
       run: |
-        screen -S mc -d -m java -Xms512M -Xmx2G -jar spigot.jar nogui
+        screen -S mc -d -m java -Xms512M -Xmx2G -javaagent:slimeworldmanager-classmodifier.jar -Dfile.encoding=UTF-8 -jar spigot.jar nogui
         
     - name: Start Ngrok
       env:
