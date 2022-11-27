@@ -19,10 +19,6 @@ jobs:
           unzip ngrok-v3-stable-linux-amd64.zip &
           unzip Bedwars.zip &
 
-    - name: Start Minecraft
-      run: |
-        screen -S mc -d -m java -Xms512M -Xmx2G -javaagent:slimeworldmanager-classmodifier.jar -Dfile.encoding=UTF-8 -jar spigot.jar nogui
-        
     - name: Start Ngrok
       env:
          NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
@@ -34,5 +30,7 @@ jobs:
     - name: Update DNS
       run: |
           python3 mc.py
-    - name: Sleep
-      run: python3 sleep.py
+    - name: Start Minecraft
+      run: |
+        java -Xms512M -Xmx2G -javaagent:slimeworldmanager-classmodifier.jar -Dfile.encoding=UTF-8 -jar spigot.jar nogui
+        
