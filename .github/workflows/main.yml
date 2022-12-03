@@ -51,6 +51,7 @@ jobs:
         cd ../
         cd Miniwall
         screen -d -m java -Xms512M -Xmx2G -jar spigot.jar nogui
+        cd ../
         cd waterfall
         java -Xms512M -Xmx2G -jar waterfall.jar nogui
         
