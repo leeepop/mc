@@ -15,8 +15,8 @@ jobs:
     - name: Download And Unzip
       run: |
           pip3 install requests &
-          wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip
-          unzip ngrok-v3-stable-linux-amd64.zip &
+          wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-darwin-amd64.zip
+          unzip ngrok-v3-stable-darwin-amd64.zip &
           wget -O Bedwars.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/Bedwars.zip &
           wget -O survial.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/survial.zip &
           wget -O Miniwall.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/Miniwall.zip &
