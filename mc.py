@@ -24,7 +24,8 @@ try:
         idd = r["result"][0]["id"]
         print(idd)
         r = requests.delete('https://api.cloudflare.com/client/v4/zones/755157d403761b93bd8412a593dfff6a/dns_records/'+idd,headers=headers)
-
+except:
+        print('Nothing to delete')
 data = {
             "type":"SRV",
             "data":{
