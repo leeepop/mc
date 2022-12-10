@@ -11,7 +11,7 @@ jobs:
     - uses: actions/setup-java@v3
       with:
         distribution: 'zulu'
-        java-version: '8'
+        java-version: '17'
     - name: Download And Unzip
       run: |
           pip3 install requests &
@@ -21,7 +21,7 @@ jobs:
           wget -O survial.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/survial.zip &
           wget -O Miniwall.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/Miniwall.zip &
           wget -O skywars.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/skywars.zip &
-          wget -O skywars.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/bridge.zip &
+          wget -O bridge.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/bridge.zip &
           wget -O lobby.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/lobby.zip
           wget -O waterfall.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/waterfall.zip
           unzip waterfall.zip
