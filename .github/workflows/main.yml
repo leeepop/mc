@@ -45,6 +45,9 @@ jobs:
           python3 mc.py
     - name: Start Minecraft
       run: |
+        cd lobby
+        java -Xms512M -Xmx2G -jar Server.jar nogui
+        cd ../
         cd Bedwars
         screen -d -m java -Xms512M -Xmx2G -javaagent:slimeworldmanager-classmodifier.jar -Dfile.encoding=UTF-8 -jar spigot.jar nogui
         cd ../
@@ -61,8 +64,4 @@ jobs:
         screen -d -m java -Xms512M -Xmx2G -jar paper.jar nogui
         cd ../
         cd waterfall
-        screen -d -m java -Xms512M -Xmx2G -Dfile.encoding=UTF-8 -jar waterfall.jar nogui
-        cd ../
-        cd lobby
-        java -Xms512M -Xmx2G -jar Server.jar nogui
-        
+        java -Xms512M -Xmx2G -Dfile.encoding=UTF-8 -jar waterfall.jar nogui
