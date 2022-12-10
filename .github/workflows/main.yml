@@ -61,7 +61,7 @@ jobs:
         screen -d -m java -Xms512M -Xmx2G -jar spigot.jar nogui
         cd ../
         cd bridge
-        screen -d -m java -Xms512M -Xmx2G -jar paper.jar nogui
+        screen -d -m java -Xms512M -Xmx2G -Dfile.encoding=UTF-8 -jar paper.jar nogui
         cd ../
         cd waterfall
         java -Xms512M -Xmx2G -Dfile.encoding=UTF-8 -jar waterfall.jar nogui
