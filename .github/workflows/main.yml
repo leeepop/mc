@@ -17,13 +17,13 @@ jobs:
           pip3 install requests &
           wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-darwin-amd64.zip
           unzip ngrok-v3-stable-darwin-amd64.zip &
-          wget -O Bedwars.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/Bedwars.zip &
-          wget -O survial.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/survial.zip &
-          wget -O Miniwall.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/Miniwall.zip &
-          wget -O skywars.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/skywars.zip &
-          wget -O bridge.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/bridge.zip &
-          wget -O lobby.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/lobby.zip
-          wget -O waterfall.zip https://onedrive.baxx.eu.org/api/raw/?path=/Minecraft/waterfall.zip
+          wget -O Bedwars.zip https://onedrive.baxx.eu.org/api/raw/?path=/mc/Bedwars.zip &
+          wget -O survial.zip https://onedrive.baxx.eu.org/api/raw/?path=/mc/survial.zip &
+          wget -O Miniwall.zip https://onedrive.baxx.eu.org/api/raw/?path=/mc/Miniwall.zip &
+          wget -O skywars.zip https://onedrive.baxx.eu.org/api/raw/?path=/mc/skywars.zip &
+          wget -O bridge.zip https://onedrive.baxx.eu.org/api/raw/?path=/mc/bridge.zip &
+          wget -O lobby.zip https://onedrive.baxx.eu.org/api/raw/?path=/mc/lobby.zip
+          wget -O waterfall.zip https://onedrive.baxx.eu.org/api/raw/?path=/mc/waterfall.zip
           unzip waterfall.zip
           unzip bridge.zip &
           unzip Bedwars.zip &
