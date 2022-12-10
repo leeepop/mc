@@ -18,11 +18,13 @@ headers = {
             'Authorization': 'Bearer 3UcIPhPXL2bas5tlS1q0Y2zB5omxMCQ7hrCBvD08',
             'Content-Type': 'application/json'
         }
-r = requests.get('https://api.cloudflare.com/client/v4/zones/755157d403761b93bd8412a593dfff6a/dns_records?type=SRV',headers=headers)
-r = json.loads(r.text)
-idd = r["result"][0]["id"]
-print(idd)
-r = requests.delete('https://api.cloudflare.com/client/v4/zones/755157d403761b93bd8412a593dfff6a/dns_records/'+idd,headers=headers)
+try:
+        r = requests.get('https://api.cloudflare.com/client/v4/zones/755157d403761b93bd8412a593dfff6a/dns_records?type=SRV',headers=headers)
+        r = json.loads(r.text)
+        idd = r["result"][0]["id"]
+        print(idd)
+        r = requests.delete('https://api.cloudflare.com/client/v4/zones/755157d403761b93bd8412a593dfff6a/dns_records/'+idd,headers=headers)
+
 data = {
             "type":"SRV",
             "data":{
