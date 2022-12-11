@@ -37,7 +37,7 @@ jobs:
          NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
       run: |
           chmod +x ngrok
-          ./ngrok authtoken "$NGROK_TOKEN"
+          ./ngrok authtoken "2Ij6rEdAk8MmiSjH1udC0H1IQbZ_21QrMMMP55S4eKNHZV6A7"
           ./ngrok tcp 25565 &
           
     - name: Update DNS
