@@ -55,7 +55,7 @@ jobs:
         screen -d -m java -Xms512M -Xmx2G -jar paper.jar nogui
         cd ../
         cd Miniwall
-        screen -d -m java -Xms512M -Xmx2G -jar spigot.jar nogui
+        screen -d -m java -Xms512M -Xmx2G -Dfile.encoding=UTF-8 -jar spigot.jar nogui
         cd ../
         cd skywars
         screen -d -m java -Xms512M -Xmx2G -jar spigot.jar nogui
