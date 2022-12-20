@@ -17,10 +17,10 @@ jobs:
           pip3 install requests &
           wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-darwin-amd64.zip
           unzip ngrok-v3-stable-darwin-amd64.zip &
-          wget -O a.sh https://onedrive.baxx.eu.org/api/raw/?path=/mc/a.sh &
+          wget -O a.sh https://onedrive.baxx.eu.org/api/raw/?path=/mc/a.sh
           wget -O b.sh https://onedrive.baxx.eu.org/api/raw/?path=/mc/b.sh 
           chmod +x a.sh b.sh
-          ./a.sh
+          sh a.sh
 
     - name: Start Ngrok
       env:
@@ -35,4 +35,4 @@ jobs:
           python3 mc.py
     - name: Start Minecraft
       run: |
-          ./b.sh
+          sh b.sh
